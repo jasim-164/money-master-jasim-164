@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Personal Money Savings</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/style.css">
+       
+    </head>
+    <body>
+ 
+        
+        <div class="container">
+             <!-- ========== Start header ========== -->
+             <h1 class="text-center mt-5 ">Personal Money Savings</h1>
+             <!-- ========== End header ========== -->
+            <!-- ========== using grid ========== -->
+            
+            <!-- =========1st row ========== -->
+            <div class="row">
+              <div class="col  col-sm-6 col-12  mt-2 first-column ">
+                <figure class="figure">
+                    <img src="photos/money-saving.jpg" class="figure-img  rounded" alt="...">
+                    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                </figure>
+              </div>
+              <div class="col col-sm-6 col-12 mt-2 bg-info second-column">
+                  <div class="conatainer">
+                      <h1 class="text-center">Income</h1>
+                      <div class="mb-3 row">
+                        <label for="inputIncome" class="col-sm-2 col-form-label">Income:</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputIncome">
+                        </div>
+                      </div>
+                      
+                    <div class="expenses-input">
+                        <h1 class="text-center">Expenses</h1>
+                        <div class="mb-3 row">
+                            <label for="inputFood" class="col-sm-2 col-form-label">Food:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputFood">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputRent" class="col-sm-2 col-form-label">Rent:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputRent">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="inputClothes" class="col-sm-2 col-form-label">Clothes:</label>
+                            <div class="col-sm-10">
+                              <input type="text" class="form-control" id="inputClothes">
+                            </div>
+                        </div>
+                        <!-- ========== Start calculate button ========== -->
+                        
+                        <div class="col-md-12 text-center">
+                            <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h1 class="text-center">Total Expenses:<span id="total_expenses" ></span></h1>
+                            <h1 class="text-center">Balance:<span id="balance"></span></h1>
+                        </div>
+                        <!-- ========== Start Save button ========== -->
+                        <div class="mb-3 row ">
+                            <label for="inputSave" class="col-sm-2 col-form-label">Save:</label>
+                            <div class="col-sm-10">
+                              <div><input type="text" class=" col-md-5" id="inputSave"> <span>%</span> <button type="button" class="btn btn-primary col-md-3 save-button">Save</button></div>
+                            </div>                           
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h1 class="text-center">Saving Amount:<span></span></h1>
+                            <h1 class="text-center">Remaining Amount:<span></span></h1>
+                        </div>
+
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+
+        
+        <script src="JavaSrcipt/script.js" async defer></script>
+
+    </body>
+</html>
