@@ -38,13 +38,24 @@ document.getElementById("calculate").addEventListener("click",function(e) {
 
 document.getElementById("saveButton").addEventListener("click",function(e) {
     saveBalance=parseInt(inputSave.value);
-    console.log("totalIncome",totalIncome);
-    console.log("savebalance2", saveBalance);
-    let val= (totalIncome*saveBalance) / (100);
-    //var amount=calculatePercentage(totalIncome,saveBalance);
-    console.log(val);
-    savingAmount.innerText=val;
-    RemainingAmount.innerText =remainingBalance-val;
+    //console.log("totalIncome",totalIncome);
+    //console.log("savebalance2", saveBalance);
+    //let val= (totalIncome*saveBalance) / (100);
+    var errors= [];
+    var amount=calculatePercentage(totalIncome,saveBalance);
+    console.log(amount);
+    savingAmount.innerText=amount;
+    RemainingAmount.innerText =remainingBalance-amount;
+
+    if(RemainingAmount.innerText<0)
+    {
+        errors.push("Please give positive integer");
+        alert("Please give positive integer");
+    }
+    if(errors.length>0)
+    {
+        console.log("errors");
+    }
 
 })
 
