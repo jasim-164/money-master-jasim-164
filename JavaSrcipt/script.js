@@ -19,15 +19,35 @@ var totalExpenses;
 var remainingBalance;
 var totalIncome;
 var saveBalance;
-var amount;
-//balance variable
-var allErrors=[];
+var amount; //balance variable
 
+var allErrors=[];//array of Errors
+
+//percentage calculate
 function calculatePercentage(totalIncome,saveBalance){
 var percentage =(totalIncome*saveBalance) / (100);
 return percentage;
 }
 
+//error display function
+function errorDisplay(temp){
+    if(temp==1)
+    {
+        Expenses.innerText="Invalid";
+        balance.innerText="Invalid";
+           
+        x.style.display = 'inline-block';//error message display
+        allErrors=[];
+    }
+    if(temp==2)
+    {
+        y.style.display = 'inline-block';
+        savingAmount.innerText="Invalid input";
+        RemainingAmount.innerText="Invalid input";
+        allErrors=[];
+    }
+}
+//check input
 function checkInput()
 {
     //number check is this is number
@@ -66,25 +86,33 @@ function checkInput()
 }
 
 document.getElementById("calculate").addEventListener("click",function(e) {
+
     checkInput(); 
-    if(allErrors.length>0)
+
+    if(allErrors.length>0 )
     {
-        Expenses.innerText="Invalid";
-        balance.innerText="Invalid";
+        errorDisplay(1);
+        // Expenses.innerText="Invalid";
+        // balance.innerText="Invalid";
            
-        x.style.display = 'inline-block';//error message display
-        allErrors=[];
+        // x.style.display = 'inline-block';//error message display
+        // allErrors=[];
        
     }
    
     else{
     x.style.display = 'none';//error hidden
     totalExpenses= parseInt(inputRent.value)+parseInt(inputClothes.value)+parseInt(inputFood.value);
-    Expenses.innerText=totalExpenses;
-
     totalIncome=parseInt(inputIncome.value);
+
+    if(totalExpenses>totalIncome){
+        errorDisplay(1);//error display function called
+    }
+    else{
+    Expenses.innerText=totalExpenses;
     remainingBalance=totalIncome-totalExpenses;
     balance.innerText=remainingBalance;
+    }
     }
 })
 allErrors=[];
@@ -102,10 +130,7 @@ document.getElementById("saveButton").addEventListener("click",function(e) {
 
     if(allErrors.length>0)
     {
-        y.style.display = 'inline-block';
-        savingAmount.innerText="Invalid input";
-        RemainingAmount.innerText="Invalid input";
-        allErrors=[];
+        errorDisplay(2);
     }
     else
     {
