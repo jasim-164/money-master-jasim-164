@@ -12,8 +12,8 @@ const inputSave=document.getElementById("inputSave");
 const savingAmount=document.getElementById("savingAmount");
 const RemainingAmount=document.getElementById("RemainingAmount");
 //error message load
-var x = document.getElementById('error-message');  
-var y = document.getElementById('error-message2'); 
+var errorMessage = document.getElementById('error-message');  
+var errorMessage2 = document.getElementById('error-message2'); 
 //variable declare
 var totalExpenses;
 var remainingBalance;
@@ -36,12 +36,12 @@ function errorDisplay(temp){
         Expenses.innerText="Invalid";
         balance.innerText="Invalid";
            
-        x.style.display = 'inline-block';//error message display
+        errorMessage.style.display = 'inline-block';//error message display
         allErrors=[];
     }
     if(temp==2)
     {
-        y.style.display = 'inline-block';
+        errorMessage2.style.display = 'inline-block';
         savingAmount.innerText="Invalid input";
         RemainingAmount.innerText="Invalid input";
         allErrors=[];
@@ -64,7 +64,7 @@ function checkInput()
         allErrors.push("input is not number");
     }
     //negative number check 
-    if(parseInt(inputRent.value)<0 || parseInt(inputClothes.value)<0 ||parseInt(inputFood.value)<0 )
+    if(parseFloat(inputRent.value)<0 || parseFloat(inputClothes.value)<0 ||parseFloat(inputFood.value)<0 )
     {
         allErrors.push("input number is negative");
     }
@@ -101,9 +101,10 @@ document.getElementById("calculate").addEventListener("click",function(e) {
     }
    
     else{
-    x.style.display = 'none';//error hidden
-    totalExpenses= parseInt(inputRent.value)+parseInt(inputClothes.value)+parseInt(inputFood.value);
-    totalIncome=parseInt(inputIncome.value);
+        errorMessage.style.display = 'none';//error hidden
+  
+    totalExpenses= parseFloat(inputRent.value)+parseFloat(inputClothes.value)+parseFloat(inputFood.value);
+    totalIncome=parseFloat(inputIncome.value);
 
     if(totalExpenses>totalIncome){
         errorDisplay(1);//error display function called
@@ -117,7 +118,7 @@ document.getElementById("calculate").addEventListener("click",function(e) {
 })
 allErrors=[];
 document.getElementById("saveButton").addEventListener("click",function(e) {
-    saveBalance=parseInt(inputSave.value);
+    saveBalance=parseFloat(inputSave.value);
 
     amount=calculatePercentage(totalIncome,saveBalance);
 
@@ -134,7 +135,7 @@ document.getElementById("saveButton").addEventListener("click",function(e) {
     }
     else
     {
-        y.style.display = 'none';
+        errorMessage2.style.display = 'none';
         //console.log(amount);
         savingAmount.innerText=amount;
         RemainingAmount.innerText =remainingBalance-amount;
