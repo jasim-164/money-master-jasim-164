@@ -1,7 +1,20 @@
+
 img{
-    width: 636px;
-    height:750px;
+  
+   height: 819px;
 }
 .second-column{
-    height:750px;
+
+    height: auto;
+    /* background-color: white; */
+}
+.container .header-title {
+    color:#31A5AC ;
+  
+}
+div #error-message{
+    display:none;
+}
+div #error-message2{
+    display:none;
 }

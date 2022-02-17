@@ -10,7 +10,9 @@
         <title>Personal Money Savings</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> -->
+        <!-- <script src="https://kit.fontawesome.com/d3a29248f3.js" crossorigin="anonymous"></script> -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" href="Bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/style.css">
        
@@ -20,7 +22,7 @@
         
         <div class="container">
              <!-- ========== Start header ========== -->
-             <h1 class="text-center mt-5 ">Personal Money Savings</h1>
+             <h1 class="text-center mt-5 header-title fw-bold">Personal Money Savings</h1>
              <!-- ========== End header ========== -->
             <!-- ========== using grid ========== -->
             
@@ -28,13 +30,13 @@
             <div class="row">
               <div class="col  col-sm-6 col-12  mt-2 first-column ">
                 <figure class="figure">
-                    <img src="photos/money-saving.jpg" class="figure-img  rounded" alt="...">
-                    <figcaption class="figure-caption">A caption for the above image.</figcaption>
+                    <img src="photos/money-saving.jpg" class="figure-image img-fluid rounded" alt="...">
+                    <figcaption class="figure-caption">Save money, less expenses, your family will be happy</figcaption>
                 </figure>
               </div>
               <div class="col col-sm-6 col-12 mt-2 bg-info second-column">
                   <div class="conatainer">
-                      <h1 class="text-center">Income</h1>
+                      <h4 class="text-center">Income</h4>
                       <div class="mb-3 row">
                         <label for="inputIncome" class="col-sm-2 col-form-label">Income:</label>
                         <div class="col-sm-10">
@@ -43,7 +45,7 @@
                       </div>
                       
                     <div class="expenses-input">
-                        <h1 class="text-center">Expenses</h1>
+                        <h4 class="text-center">Expenses</h4>
                         <div class="mb-3 row">
                             <label for="inputFood" class="col-sm-2 col-form-label">Food:</label>
                             <div class="col-sm-10">
@@ -67,9 +69,11 @@
                         <div class="col-md-12 text-center">
                             <button type="button" class="btn btn-primary" id="calculate">Calculate</button>
                         </div>
-                        <div class="col-md-12 text-center">
-                            <h1 class="text-center">Total Expenses:<span id="total_expenses" ></span></h1>
-                            <h1 class="text-center">Balance:<span id="balance"></span></h1>
+                        <div class="col-md-12 text-center ">
+                            <h3 class="bg-danger text-white" id="error-message">your input is not valid, please give correct input<span> <img src=photos/sign-stop.png class="img-responsive img-fluid stop-icon" width=35 height=35></span></h3>
+
+                            <h4 class="text-center">Total Expenses:<span id="total_expenses" ></span></h4>
+                            <h4 class="text-center">Balance:<span id="balance"></span></h4>
                         </div>
                         <!-- ========== Start Save button ========== -->
                         <div class="mb-3 row ">
@@ -80,8 +84,9 @@
                             </div>                           
                         </div>
                         <div class="col-md-12 text-center">
-                            <h1 class="text-center">Saving Amount:<span id="savingAmount"></span></h1>
-                            <h1 class="text-center">Remaining Amount:<span id="RemainingAmount"></span></h1>
+                          <h3 class="bg-danger text-white" id="error-message2">Saving amount is not allowed more than Current Balance<span> <img src=photos/sign-stop.png class="img-responsive img-fluid stop-icon" width=35 height=35></span></h3>
+                            <h4 class="text-center">Saving Amount:<span id="savingAmount"></span></h4>
+                            <h4 class="text-center">Remaining Amount:<span id="RemainingAmount"></span></h4>
                         </div>
 
                     </div>
